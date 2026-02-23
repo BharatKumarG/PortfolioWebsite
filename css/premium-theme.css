@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-dark: #FAFAFA;
+    --bg-surface: #FFFFFF;
+    --bg-glass: rgba(255, 255, 255, 0.9);
+    --border-glass: #09090B;
+
+    --text-primary: #09090B;
+    --text-secondary: #3F3F46;
+    --text-muted: #71717A;
+
+    --accent-cyan: #2563EB;
+    --accent-purple: #1D4ED8;
+    --primary-gradient: #2563EB;
+    --secondary-gradient: #FFFFFF;
+
+    --font-heading: 'Archivo', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+
+    --shadow-glow: none;
+    --shadow-block: 4px 4px 0px #09090B;
+    --shadow-block-hover: 8px 8px 0px #09090B;
+    --transition-smooth: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+    --bg-dark: #09090B;
+    --bg-surface: #18181B;
+    --bg-glass: rgba(24, 24, 27, 0.9);
+    --border-glass: #FFFFFF;
+
+    --text-primary: #FAFAFA;
+    --text-secondary: #A1A1AA;
+    --text-muted: #71717A;
+
+    --accent-cyan: #3B82F6;
+    /* Lighter blue for dark mode contrast */
+    --accent-purple: #60A5FA;
+    --primary-gradient: #3B82F6;
+    --secondary-gradient: #18181B;
+
+    --shadow-block: 4px 4px 0px #FFFFFF;
+    --shadow-block-hover: 8px 8px 0px #FFFFFF;
+}
+
+/* Base Overrides */
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Ensure background stretches nicely */
+.hero,
+.ftco-section {
+    background-color: var(--bg-dark);
+}
+
+/* Navbar */
+.ftco-navbar-light {
+    background: var(--bg-dark) !important;
+    border-bottom: 2px solid var(--border-glass);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.ftco-navbar-light .navbar-nav>.nav-item>.nav-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary) !important;
+    opacity: 1 !important;
+    transition: var(--transition-smooth);
+}
+
+.ftco-navbar-light .navbar-nav>.nav-item>.nav-link:hover,
+.ftco-navbar-light .navbar-nav>.nav-item.active>.nav-link {
+    color: var(--text-primary) !important;
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    color: var(--text-primary) !important;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* Premium Gradient Text */
+.text-gradient {
+    color: var(--accent-cyan);
+    font-weight: 800;
+}
+
+/* Fancy Buttons */
+.btn.btn-primary {
+    background: var(--accent-cyan);
+    border: 2px solid #09090B;
+    border-radius: 0;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    padding: 12px 30px;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-block);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn.btn-primary:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-block-hover);
+    background: var(--accent-purple);
+    color: #fff;
+}
+
+.btn.btn-secondary-custom {
+    background: #FFFFFF;
+    border: 2px solid #09090B;
+    border-radius: 0;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    box-shadow: var(--shadow-block);
+    transition: var(--transition-smooth);
+}
+
+.btn.btn-secondary-custom:hover {
+    background: #E4E4E7;
+    color: var(--text-primary);
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-block-hover);
+}
+
+/* Hero Section */
+.hero .hero-wrap {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    z-index: 0;
+}
+
+.hero .hero-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #09090B;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Make Hero Section consistently dark to perfectly blend the black-background hero image */
+.hero {
+    background-color: #09090B !important;
+}
+
+/* Force Light text in the dark Hero Section */
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p,
+.hero .subheading {
+    color: #FAFAFA !important;
+}
+
+/* Ensure the accent color remains strong for the span text */
+.hero h1 span,
+.hero .text-gradient {
+    color: var(--accent-cyan) !important;
+}
+
+/* Block Cards */
+.glass-card {
+    background: var(--bg-surface);
+    border: 2px solid #09090B;
+    border-radius: 0;
+    padding: 35px;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-block);
+}
+
+.glass-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-block-hover);
+    background: var(--bg-surface);
+}
+
+/* About Section Enhancements */
+.about-info span.title-s {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    opacity: 0.5;
+    transition: var(--transition-smooth);
+}
+
+.about-img img {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    filter: contrast(1.1) saturate(1.1);
+    border: 1px solid var(--border-glass);
+}
+
+/* Skill Progress Bars */
+.skill-mf .progress {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.skill-mf .progress .progress-bar {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+    position: relative;
+}
+
+/* Resume Section */
+.resume-wrap {
+    background: var(--bg-surface);
+    border: 2px solid var(--border-glass);
+    border-radius: 0;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: var(--transition-smooth);
+    position: relative;
+    box-shadow: var(--shadow-block);
+}
+
+.resume-wrap:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-block-hover);
+    border-color: var(--border-glass);
+}
+
+.resume-wrap .date {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.resume-wrap h2 {
+    font-size: 22px;
+    color: var(--text-primary);
+}
+
+.resume-wrap .position {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Projects Section */
+.blog-entry {
+    background: var(--bg-surface);
+    border-radius: 0;
+    overflow: hidden;
+    border: 2px solid var(--border-glass);
+    transition: var(--transition-smooth);
+    height: 100%;
+    box-shadow: var(--shadow-block);
+}
+
+.blog-entry:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-block-hover);
+    border-color: var(--border-glass);
+}
+
+.blog-entry .block-20 {
+    display: block;
+    height: 220px;
+    width: 100%;
+    border-bottom: 2px solid var(--border-glass);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.blog-entry .text {
+    padding: 25px;
+}
+
+.blog-entry .heading a {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    font-size: 1.1rem;
+}
+
+.blog-entry .heading a:hover {
+    color: var(--accent-cyan);
+}
+
+.blog-entry p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Contact Boxes */
+.contact-section .box {
+    background: var(--bg-surface);
+    border: 2px solid var(--border-glass);
+    border-radius: 0;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-block);
+}
+
+.contact-section .box:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-block-hover);
+}
+
+.contact-section .box .icon {
+    width: 80px;
+    height: 80px;
+    background: #FAFAFA;
+    border-radius: 0;
+    margin: 0 auto 20px;
+    color: var(--text-primary);
+    font-size: 30px;
+    border: 2px solid var(--border-glass);
+    transition: var(--transition-smooth);
+}
+
+.contact-section .box:hover .icon {
+    background: var(--accent-cyan);
+    color: var(--bg-surface);
+}
+
+/* Footer overrides */
+.ftco-footer {
+    background: var(--bg-surface);
+    padding: 4em 0 2em !important;
+    border-top: 2px solid var(--border-glass);
+}
+
+/* Fix Big Headings */
+/* Hide watermark text behind section headings */
+.heading-section h1.big,
+.heading-section h1.big.big-2 {
+    display: none !important;
+}
+
+.heading-section h2 {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.heading-section p {
+    color: var(--text-secondary);
+}
+
+/* Helper spacing */
+.margin-top {
+    margin-top: 5rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--accent-cyan);
+    transform: rotate(15deg);
+}
+
+/* Customizing the Typing text in hero */
+#typing-animation {
+    color: var(--accent-cyan) !important;
+}
+
+/* ============================================================
+   COMPREHENSIVE TEXT VISIBILITY FIXES
+   The original style.css was designed for a dark-only layout.
+   These overrides ensure all text is properly themed.
+   ============================================================ */
+
+/* --- Global text color overrides (higher specificity) --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: var(--text-primary) !important;
+}
+
+/* Re-force hero text to stay light (hero is always dark) */
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero h5,
+.hero h6 {
+    color: #FAFAFA !important;
+}
+
+.hero h1 span {
+    color: var(--accent-cyan) !important;
+}
+
+/* --- Body text & paragraph colors --- */
+body {
+    color: var(--text-secondary) !important;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+/* --- Links --- */
+a {
+    color: var(--accent-cyan);
+}
+
+a:hover,
+a:focus {
+    color: var(--accent-purple);
+}
+
+/* --- Project card titles (override style.css line 9340) --- */
+.blog-entry .text .heading a {
+    color: var(--text-primary) !important;
+}
+
+.blog-entry .text .heading a:hover,
+.blog-entry .text .heading a:focus,
+.blog-entry .text .heading a:active {
+    color: var(--accent-cyan) !important;
+}
+
+/* --- Project card meta text --- */
+.blog-entry .meta span,
+.blog-entry .meta a {
+    color: var(--accent-cyan) !important;
+}
+
+/* --- Contact Section: fix invisible text --- */
+.contact-section .box h3 {
+    color: var(--text-primary) !important;
+}
+
+.contact-section .box p {
+    color: var(--text-secondary) !important;
+}
+
+.contact-section .contact-info p a {
+    color: var(--accent-cyan) !important;
+}
+
+.contact-section .contact-info p {
+    color: var(--text-secondary) !important;
+}
+
+/* Contact block-23 icon and text */
+.block-23 ul li .icon {
+    color: var(--accent-cyan) !important;
+}
+
+.block-23 ul li span {
+    color: var(--text-secondary) !important;
+}
+
+/* --- About Section: counter labels --- */
+.ftco-counter .ftco-label {
+    color: var(--text-secondary) !important;
+}
+
+.ftco-counter .ftco-number {
+    color: var(--accent-cyan) !important;
+}
+
+/* --- Resume Section: position & description text --- */
+.resume-wrap p {
+    color: var(--text-secondary) !important;
+}
+
+.resume-wrap .position span {
+    color: var(--text-muted) !important;
+}
+
+/* --- "More projects on" text --- */
+.project-section p,
+.ftco-section p {
+    color: var(--text-secondary);
+}
+
+/* --- Footer text overrides --- */
+.ftco-footer p,
+.ftco-footer a,
+.ftco-footer .block-23 ul li span {
+    color: var(--text-secondary) !important;
+}
+
+.ftco-footer a:hover {
+    color: var(--accent-cyan) !important;
+}
+
+.ftco-footer h2 {
+    color: var(--text-primary) !important;
+}
+
+/* --- GitHub button text fix in hero (always dark bg) --- */
+.hero .btn.btn-secondary-custom {
+    background: #FFFFFF;
+    color: #09090B !important;
+    border-color: #FFFFFF;
+}
+
+.hero .btn.btn-secondary-custom:hover {
+    background: #E4E4E7;
+    color: #09090B !important;
+}
+
+/* --- Skill bars background fix for light mode --- */
+.skill-mf .progress {
+    background-color: var(--bg-dark) !important;
+    border: 1px solid var(--border-glass);
+}
+
+/* --- Big heading watermark text in dark mode --- */
+/* --- Big heading watermark text — fully hidden --- */
+[data-theme="dark"] .heading-section h1.big {
+    display: none !important;
+}
+
+/* ============================================================
+   THEME TOGGLE BUTTON - Simple visible icon
+   ============================================================ */
+.theme-toggle-btn {
+    background: var(--bg-surface) !important;
+    border: 2px solid var(--border-glass) !important;
+    border-radius: 0 !important;
+    color: var(--text-primary) !important;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 6px 12px;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-block);
+    width: 42px;
+    height: 42px;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--accent-cyan) !important;
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-block-hover);
+}
+
+/* Hide the broken icon font text — replaced by JS emoji */
+.theme-toggle-btn span {
+    font-size: 18px;
+    line-height: 1;
+}
