@@ -138,7 +138,7 @@
 					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
 						data-scrollax-parent="true">
 						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/bg_1.png); background-size: cover; background-position: center;">
+							style="background-image:url(images/person_main.png); background-size: cover; background-position: center top;">
 							<div class="overlay"></div>
 						</div>
 						<div class="one-forth d-flex  align-items-center ftco-animate"
@@ -151,38 +151,7 @@
 								<!-- Element to contain animated typing -->
 								<span id="typing-animation"></span>
 
-								<script>
 
-									// Initialize the typing animation
-									const typingAnimationElement = document.getElementById('typing-animation');
-
-									// Create an array of typing text
-									const typingTexts = [
-										'DevOps Engineer',
-										'Blogger',
-										'Trainer ',
-									];
-
-									// Create a function to display the typing animation for a given text
-									function playTypingAnimation(text) {
-										// Loop through each character and add it to the element
-										for (let i = 0; i < text.length; i++) {
-											setTimeout(() => {
-												typingAnimationElement.textContent += text[i];
-											}, i * 200); // Increase the delay to slow down the typing animation
-										}
-
-										// Once the animation is complete, reset the text and start over
-										setTimeout(() => {
-											typingAnimationElement.textContent = '';
-											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-										}, text.length * 200);
-									}
-
-									// Start the typing animation loop
-									playTypingAnimation(typingTexts[0]);
-
-								</script>
 
 								<br>
 								<br>
@@ -215,7 +184,7 @@
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 										<div class="about-img">
-											<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
+											<img src="images/person_main.png" class="img-fluid rounded b-shadow-a" alt="">
 										</div>
 									</div>
 									<!-- Details next to profile image -->
@@ -286,7 +255,7 @@
 									the development and deployment of reliable, scalable systems..</p>
 								<ul class="about-info mt-4 px-md-0 px-2">
 									<li class="d-flex"><span>Profile:</span> <span>DevOps Engineer</span></li>
-									<li class="d-flex"><span>Domain:</span> <span>Could Computing & AWS DevOps
+									<li class="d-flex"><span>Domain:</span> <span>Cloud Computing & AWS DevOps
 											Engineer</span></li>
 									<li class="d-flex"><span>Education:</span> <span>Bachelor of Technology</span></li>
 									<li class="d-flex"><span>Language:</span> <span> English (fluent), Telugu (native),
@@ -635,22 +604,21 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-					<!-- <div class="container"> -->
-					<div class="row justify-content-center">
-						<div class="col-md-7 ftco-animate text-center">
-							<h2>More projects on<span> Github </span> </h2>
-							<div class="heading">
-								<h4> As a DevOps enthusiast, I’m passionate about solving business challenges and
-									streamlining processes through automation. </h4>
-								<br>
-								<p><a href="https://github.com/BharatKumarG"
-										class="btn btn-primary py-3 px-5">GitHub</a></p>
+				<div class="ftco-section ftco-hireme margin-top">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-md-7 ftco-animate text-center">
+								<h2>More projects on<span> Github </span> </h2>
+								<div class="heading">
+									<h4> As a DevOps enthusiast, I’m passionate about solving business challenges and
+										streamlining processes through automation. </h4>
+									<br>
+									<p><a href="https://github.com/BharatKumarG"
+											class="btn btn-primary py-3 px-5">GitHub</a></p>
+								</div>
 							</div>
 						</div>
 					</div>
-					<!-- </div> -->
 				</div>
 			</section>
 
@@ -817,6 +785,39 @@
 					applyTheme(newTheme);
 					localStorage.setItem('theme', newTheme);
 				});
+			</script>
+
+			<script>
+				// Initialize the typing animation
+				const typingAnimationElement = document.getElementById('typing-animation');
+
+				// Create an array of typing text
+				const typingTexts = [
+					'DevOps Engineer',
+					'Blogger',
+					'Trainer ',
+				];
+
+				// Create a function to display the typing animation for a given text
+				function playTypingAnimation(text) {
+					// Loop through each character and add it to the element
+					for (let i = 0; i < text.length; i++) {
+						setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+						}, i * 200); // Increase the delay to slow down the typing animation
+					}
+
+					// Once the animation is complete, reset the text and start over
+					setTimeout(() => {
+						typingAnimationElement.textContent = '';
+						playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+					}, text.length * 200);
+				}
+
+				// Start the typing animation loop
+				if (typingAnimationElement) {
+					playTypingAnimation(typingTexts[0]);
+				}
 			</script>
 
 </body>
